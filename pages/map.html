@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>Copenhagen Wawa -Blue Sticky note</title>
+
+  <!-- Load Leaflet from CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+
+  <!-- Load Esri Leaflet from CDN -->
+  <script src="https://unpkg.com/esri-leaflet@3.0.12/dist/esri-leaflet.js"></script>
+  <script src="https://unpkg.com/esri-leaflet-vector@4.2.3/dist/esri-leaflet-vector.js"></script>
+
+  <!-- Load Leaflet Control Search plugin -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+  <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+  <!-- Load Leaflet Routing Machine -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+  <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+
+  <!-- Load Leaflet Control Legend plugin -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-legend/dist/leaflet-control-legend.css" />
+  <script src="https://unpkg.com/leaflet-control-legend/dist/leaflet-control-legend.js"></script>
+
+  <!-- Load Leaflet Geolocation Control plugin -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+  <script src="https://unpkg.com/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      color: #323232;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="map"></div>
+
+  <script>
+    const map = L.map("map", {
+      minZoom: 10,
+      maxZoom: 18
+    });
+    
+    map.setView([55.68270923835285, 12.580772656184847], 13);
+
+    const apiKey = "AAPK3cfa941c1a374bc7b6276f09068109a4-xZs_tTNqYjqGQTbLNNcyxfFh4wpW8wALwH1-Zs0c9tLGv2YKHrHjFyePuqKpp2g";
+
+    const basemapEnum = "4784bd8613444c8eacc17da33f104366";
+
+    const basemapLayer = L.esri.Vector.vectorBasemapLayer(basemapEnum, {
+      apiKey: apiKey
+    }).addTo(map);
+
+    // Add GeoJSON layers
+    const geojsonLayers = [
+      {
+        id: "Bubbler",
+        url: "https://services1.arcgis.com/DbPykcCwUUYq5zKg/arcgis/rest/services/Shapefiles/FeatureServer/0",
+        apiKey: apiKey,
+        pointToLayer: function (feature, latlng) {
+          return L.marker(latlng, {
+            icon: L.icon({
+              iconUrl: 'fountain.png',
+              iconSize: [20, 20],
+              iconAnchor: [15, 15]
+            }),
+            title: "Bubbler"
+          });
+        },
+        onEachFeature: function (feature, layer) {
+          if (feature.properties) {
+            let popupContent = "";
+            for (let prop in feature.properties) {
+              popupContent += `<b>${prop}:</b> ${feature.properties[prop]}<br>`;
+            }
+            layer.bindPopup(popupContent);
+          }
+        }
+      },
+      {
+        id: "Swimming Hall",
+        url: "https://services1.arcgis.com/DbPykcCwUUYq5zKg/arcgis/rest/services/Shapefiles/FeatureServer/1",
+        apiKey: apiKey,
+        pointToLayer: function (feature, latlng) {
+          return L.marker(latlng, {
+            icon: L.icon({
+              iconUrl: 'pool.png',
+              iconSize: [30, 30],
+              iconAnchor: [15, 15]
+            }),
+            title: "Swimming Hall"
+          });
+        },
+        onEachFeature: function (feature, layer) {
+          if (feature.properties) {
+            let popupContent = "";
+            for (let prop in feature.properties) {
+              popupContent += `<b>${prop}:</b> ${feature.properties[prop]}<br>`;
+            }
+            layer.bindPopup(popupContent);
+          }
+        }
+      },
+      {
+        id: "Badezone",
+        url: "https://services1.arcgis.com/DbPykcCwUUYq5zKg/arcgis/rest/services/Badezone_Denmark_EEA_XYTableToPoint/FeatureServer/0",
+        apiKey: apiKey,
+        pointToLayer: function (feature, latlng) {
+          return L.marker(latlng, {
+            icon: L.icon({
+              iconUrl: 'bath.png',
+              iconSize: [30, 30],
+              iconAnchor: [15, 15]
+            }),
+            title: "Badezone"
+          });
+        },
+        onEachFeature: function (feature, layer) {
+          if (feature.properties) {
+            let popupContent = "";
+            for (let prop in feature.properties) {
+              popupContent += `<b>${prop}:</b> ${feature.properties[prop]}<br>`;
+            }
+            layer.bindPopup(popupContent);
+          }
+        }
+      },
+      {
+        id: "Yakin",
+        url: "https://services1.arcgis.com/DbPykcCwUUYq5zKg/arcgis/rest/services/Copenhagen_Kayaking/FeatureServer/8",
+        apiKey: apiKey,
+        style: {
+          color: '#0057A3',
+          weight: 2
+        },
+      },
+    ];
+
+    // Add search control
+    var geocoder = L.Control.geocoder({
+      position: 'topright',
+      placeholder: 'Search'
+    }).addTo(map);
+
+    const overlayMaps = {};
+
+    geojsonLayers.forEach(layer => {
+      const geojsonLayer = L.esri.featureLayer({
+        url: layer.url,
+        apiKey: layer.apiKey,
+        style: layer.style,
+        onEachFeature: layer.onEachFeature,
+        pointToLayer: layer.pointToLayer
+      });
+
+      overlayMaps[layer.id] = geojsonLayer;
+
+      geojsonLayer.addTo(map);
+    });
+
+    // Define your layer names with HTML for the icons
+    const overlayMapsWithIcons = {
+      "<img src='images/water-drop.png' width='15px' height='15px'> Bubbler": overlayMaps["Bubbler"],
+      "<img src='images/Swimming.png' width='20px' height='20px'> Swimming Hall": overlayMaps["Swimming Hall"],
+      "<img src='images/swimming-pool.png' width='20px' height='20px'> Badezone": overlayMaps["Badezone"],
+      "<img src='images/Kayaking.png' width='15px' height='3px'> Yakin": overlayMaps["Yakin"]
+    };
+
+    // Add layer control
+    var layerControl = L.control.layers(null, overlayMapsWithIcons, {
+      collapsed: false, // Keeps the control panel open by default
+      autoZIndex: false, // Ensures that all layers are turned off initially
+    }).addTo(map);
+
+    // Add current location control
+    L.control.locate().addTo(map);
+  </script>
+
+    // Navigation Bar
+  <div class="navbar fixed-bottom navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">home</a>
+  </div>
+</body>
+
+</html>

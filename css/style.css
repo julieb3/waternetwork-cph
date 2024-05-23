@@ -62,11 +62,11 @@ table {
     :root {
         --title-font: "Montserrat", sans-serif;
         --body-font: "Montserrat", sans-serif;
-        --colour-back: white;
-        --colour-prim: black;
-        --colour-second: black;
-        --colour-second-dark: black;
-        --colour-text: black;
+        --colour-back: #FFF8EB;
+        --colour-prim: #292929;
+        --colour-second: #292929;
+        --colour-second-dark: #292929;
+        --colour-text: #292929;
     }
 
 /* ******   MOBILE   ********________________________________________________________________ */

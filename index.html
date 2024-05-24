@@ -1,46 +1,88 @@
+<!-- Snacks for later
+- srcset=""  -->
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- whats the title of our site? -->
+        
+        <!-- CPH Summer Water Network -->
         <title></title> 
-        <!-- Insert font stuff here -->
+        
+        <!-- Font linking... -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">    
+       
+        <!-- Linking to our style sheet and the bootsrap css styles -->
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/flexboxgrid.css">
+
+        <!-- For if we need a lot of javascript -->
         <script src="js/scripts.js"></script>
-    </head>
+        </head>
+
     <body>
         <header>
+            <h1 class="mobile-only my-title"> Copenhagen Water Map</h1>
             <nav>
-                <ul>
-                    <a href="pages/about.html"><li>about</li></a>
+                <ul class="flexin">
+                    <a class="desktop-only my-title">Copenhagen Water Map <img src="images/logo_mermaid2.svg" alt="An illustration of a mermaid"> </a>
+                    <a href="pages/map.html"><li ">map</li></a>
+                    <a class="mobile-only">  <img src="images/logo_mermaid2.svg" alt="An illustration of a mermaid"></a>
+                    <a href="#my-footer"><li >sources</li></a>
                 </ul>
             </nav>
-
         </header>
+
         <div class="container-fluid">
-            <section>
-                <div class="row">
+            <section class="row">
+                <!-- A TESTER/ a Preview -->
+                    <h1 class="col-xs-12 col-sm-6 col-md-3">This is header 1</h1>
+                    <h2 class="col-xs-12 col-sm-6 col-md-3">This is header 2</h2>
+                    <h3 class="col-xs-12 col-sm-6 col-md-3">This is header 3</h3>
+                    <h4 class="col-xs-12 col-sm-6 col-md-3">This is header 4</h4>
 
-                </div>
+                    <p class="col-xs-12 col-sm-6 col-md-3"> 
+                        This is a paragraph, 
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque 
+                        laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto 
+                        beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur 
+                        aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. 
+                        <br>
+                        Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
+                        sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
+                        Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit 
+                        laboriosam, nisi ut aliquid ex ea commodi consequatur?
+                    </p>
             </section>
 
-            <section>
-                <div class="row">
-                    
-                </div>
+            <section class="row">
+                
             </section>
 
-            <section>
-                <div class="row">
-                    
-                </div>
+            <section class="row">
+                
             </section>
 
         </div>
-        <footer>
+        <footer id="my-footer">
+            <div class="container-fluid">
+                <div class="row">
+                    
+                </div>
+            </div>
 
         </footer>
     </body>
 </html>
+
+
+
+<!-- THE GRAVEYARD
+
+<img class="fishy" src="images/hov-tail.svg" alt="a little whale tail that appears on hover"> 
+
+-->

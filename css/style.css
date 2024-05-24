@@ -57,47 +57,181 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+/* ******   TYPOGRAPHY   ********________________________________________________________________ */
 
+    /* probably wont need these but here anyway!  */
+    .pf-body {
+        font-family: "Playfair", serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+    }
+    .pf-title{
+        font-family: "Playfair Display", serif;
+        font-optical-sizing: auto;
+        font-weight: 700;
+        font-style: normal;
+    }
+
+  
 /* ******   VARIABLES   ********________________________________________________________________ */
     :root {
-        --title-font: "Montserrat", sans-serif;
-        --body-font: "Montserrat", sans-serif;
-        --colour-back: #FFF8EB;
-        --colour-prim: #292929;
-        --colour-second: #292929;
-        --colour-second-dark: #292929;
-        --colour-text: #292929;
+        --title-font: "Playfair Display", serif;
+        --body-font: "Playfair", sans-serif;
+
+        /* Use this for fontweight to make it bold! */
+        --supa-bold: 900;
+        --bolden: 700;
+        --regular: 500;
+
+        --col-back: #FFFDFA;
+        --col-text: #292929;
+
+        --col-prim: #0057A3;
+        --col-sec: #FFF1D6;
+        --col-accent: #C8102E;
+
+        --hov-opac: 60%;
+
+        /* change to something else?? */
+        --col-link: cyan; 
+
     }
 
 /* ******   MOBILE   ********________________________________________________________________ */
 /* BASICS-------------------------------------------------*/
+    .mobile-only{
+        display: flex;
+    }
+    .desktop-only{
+        display: none;
+    }
+    .flexin{
+        display: flex;
+    }
+    .blockin{
+        flex-direction: column;
+    }
 
-    /* html {
+    #map {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        color: #323232;
+        z-index: -1;
+
+        top: 70px;
+      }
+
+
+    html {
+        background-color: var(--col-back);
+        color: var(--col-text);
+        font-family: var(--body-font);
+        font-size: 16px;
         
     }
-    p{
-        
+    body{
+        margin: 0;
+        padding: 0;
     }
- 
+
+    /* Hello! REM in font sizing means whatever the HTML is set to so 1rem= 14px and an em is based on the parent container
+        https://www.digitalocean.com/community/tutorials/css-rem-vs-em-units */
+
+        /* REM REF- 
+        10px = 0.625rem
+        12px = 0.75rem
+        14px = 0.875rem
+        16px = 1rem (base)
+        18px = 1.125rem
+        20px = 1.25rem
+        24px = 1.5rem
+        30px = 1.875rem
+        32px = 2rem */
+
     a {
-        
+        color: var(--col-link);
+    }
+
+    h1, h2, h3, h4{
+        color: var(--col-prim);
+    }
+
+    h1, h2{
+        font-weight: var(--supa-bold);
+    }
+
+    p{
+        font-size: 1rem;
+    }
+    
+    h2, h3, h4{
+        font-size: 1.5rem;
+        line-height: 175%;
     }
 
     h1{
-
+        font-size: 1.8rem;
     }
-    h2{
 
-    }
     h3{
-
+        font-weight: var(--bolden);
+    }
+    h4{
+        font-weight: 600;
+        opacity: 90%;
+    }
+    section{
+        /* If you put 2 values it is top/bottom, left/right (see below). If you put 4 values it means top, left, bottom, right.  */
+        margin: 1rem 0;
     }
 
-    h4{
+/* HEADER/ NAV-------------------------------------------------*/
+/* If you dont like colours we can change- this is just a temporary setup! */
+    nav, a{
+        text-decoration: none;
+        color: var(--col-sec);
 
-    } */
+        /* add this back in when responsive glitch is resolved-- */
+        /* font-weight: var(--supa-bold); */
 
-/* HEADER-------------------------------------------------*/
+        font-size: 1.5rem;
+    }
+    nav{
+        background-color: var(--col-prim);
+        overflow: hidden;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: .5rem;
+    }
+    nav a img{
+        padding: .2rem;
+        width: 100px;
+    }
+
+    .my-title{
+        font-weight: var(--supa-bold);
+
+        font-size: 2rem;
+        justify-content: center;
+        padding: 1rem;
+        
+
+    }
+    nav ul{
+        align-items: end;
+        justify-content: center;
+    }
+    nav li:hover{
+        opacity: var(--hov-opac);
+    }
 
 
 
@@ -122,37 +256,45 @@ table {
 
 
 
-/* ******   TAB AND DESKTOP   ********________________________________________________________________ */
+/* ******   TAB AND DESKTOP  ********________________________________________________________________ */
 @media only screen and (min-width: 768px) {
+    .mobile-only{
+        display: none;
+    }
+    .desktop-only{
+        display: flex;
+    }
 /* BASICS-------------------------------------------------*/
-
-    /* html {
-        
-    }
-    p{
-        
-    }
- 
-    a {
-        
-    }
-
     h1{
-
+        font-size: 3.75rem;
     }
     h2{
-
+        font-size: 3rem;
     }
-    h3{
 
+    h3{
+        font-size: 2.125rem;
     }
 
     h4{
+        font-size: 1.5rem;
 
-    } */
+    }
+
 
 /* HEADER-------------------------------------------------*/
-
+    .my-title{
+        font-size: 2.75rem;
+        
+    }
+    nav a img{
+        width: 50px;
+        padding: 0 1rem;
+    }
+    nav a{
+        padding: 1rem;
+        font-size: 1.5rem;
+    }
 
 
 /* HOMEPAGE+-------------------------------------------------*/
@@ -165,7 +307,9 @@ table {
 
 
 /* MAP-------------------------------------------------*/
-
+    #map{
+        top: 0px;
+    }
 
 
 /* STORYLINE-------------------------------------------------*/
@@ -178,37 +322,35 @@ table {
 }
 
 
-/* ******   LARGE DESKTOP   ********________________________________________________________________ */
+/* ******   DESKTOP ONLY  ********________________________________________________________________ */
 @media only screen and (min-width: 992px) {
 /* BASICS-------------------------------------------------*/
 
-    /* html {
-        
-    }
-    p{
-        
-    }
- 
-    a {
-        
-    }
+p{
+    /* REM REF- 
+    10px = 0.625rem
+    12px = 0.75rem
+    14px = 0.875rem
+    16px = 1rem (base)
+    18px = 1.125rem
+    20px = 1.25rem
+    24px = 1.5rem
+    30px = 1.875rem
+    32px = 2rem */
 
-    h1{
-
-    }
-    h2{
-
-    }
-    h3{
-
-    }
-
-    h4{
-
-    } */
+    font-size: 0.875rem;
+}
 
 /* HEADER-------------------------------------------------*/
-
+/* mermaid logo spacing */
+    nav a img{
+        width: 70px;
+    }
+    .my-title{
+        font-size: 4rem;
+        
+    }
+    
 
 
 /* HOMEPAGE+-------------------------------------------------*/
@@ -235,3 +377,16 @@ table {
 
 
 }
+
+
+
+
+/* THE GRAVEYARD 
+
+
+.homebutton{
+    text-align: center;
+} 
+
+
+*/

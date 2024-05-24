@@ -1,61 +1,68 @@
 <!DOCTYPE html>
-<html>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- CPH Summer Water Network -->
+    <title></title> 
+    
+    <!-- Font linking... -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">    
+    
+    <!-- Linking to our style sheet and the bootsrap css styles -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/flexboxgrid.css">
+
+    <!-- For if we need a lot of javascript -->
+    <script src="../js/scripts.js"></script>
+
+    <!-- The random stuff that was in here before... -->
+    <!--  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-  <title>Copenhagen Wawa -Blue Sticky note</title>
 
-  <!-- Load Leaflet from CDN -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <!-- Load Leaflet from CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 
-  <!-- Load Esri Leaflet from CDN -->
-  <script src="https://unpkg.com/esri-leaflet@3.0.12/dist/esri-leaflet.js"></script>
-  <script src="https://unpkg.com/esri-leaflet-vector@4.2.3/dist/esri-leaflet-vector.js"></script>
+    <!-- Load Esri Leaflet from CDN -->
+    <script src="https://unpkg.com/esri-leaflet@3.0.12/dist/esri-leaflet.js"></script>
+    <script src="https://unpkg.com/esri-leaflet-vector@4.2.3/dist/esri-leaflet-vector.js"></script>
 
-  <!-- Load Leaflet Control Search plugin -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
-  <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <!-- Load Leaflet Control Search plugin -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 
-  <!-- Load Leaflet Routing Machine -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
-  <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+    <!-- Load Leaflet Routing Machine -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
 
-  <!-- Load Leaflet Control Legend plugin -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-legend/dist/leaflet-control-legend.css" />
-  <script src="https://unpkg.com/leaflet-control-legend/dist/leaflet-control-legend.js"></script>
+    <!-- Load Leaflet Control Legend plugin -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-legend/dist/leaflet-control-legend.css" />
+    <script src="https://unpkg.com/leaflet-control-legend/dist/leaflet-control-legend.js"></script>
 
-  <!-- Load Leaflet Geolocation Control plugin -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
-  <script src="https://unpkg.com/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+    <!-- Load Leaflet Geolocation Control plugin -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://unpkg.com/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="mobile-only my-title"> Copenhagen Water Map</h1>
+      <nav>
+          <ul class="flexin">
+              <a class="desktop-only my-title" href="../index.html">Copenhagen Water Map <img src="../images/logo_mermaid2.svg" alt="An illustration of a mermaid"> </a>
+              <a class="current" ><li ">map</li></a>
+              <a class="mobile-only" href="../index.html">  <img src="../images/logo_mermaid2.svg" alt="An illustration of a mermaid"></a>
+              <a href="#my-footer"><li >sources</li></a>
+          </ul>
+      </nav>
+  </header>
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-    #map {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 14px;
-      color: #323232;
-    }
-  </style>
-
-</head>
-
-<body>
   <div id="map"></div>
-
   <script>
     const map = L.map("map", {
       minZoom: 10,
@@ -197,10 +204,8 @@
     L.control.locate().addTo(map);
   </script>
 
-    // Navigation Bar
-  <div class="navbar fixed-bottom navbar-light bg-light">
-    <a class="navbar-brand" href="index.html">home</a>
-  </div>
-</body>
-<!-- hhhhh -->
+  <footer id="my-footer">
+
+  </footer>
+  </body>
 </html>

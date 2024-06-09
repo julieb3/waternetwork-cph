@@ -58,7 +58,7 @@
       <nav>
           <ul class="flexin">
               <a class="desktop-only my-title" href="../index.html">Copenhagen Water Map <img src="../images/logo_mermaid2.svg" alt="An illustration of a mermaid"> </a>
-              <a class="current" ><li ">map</li></a>
+              <a class="current" ><li >map</li></a>
               <a class="mobile-only" href="../index.html">  <img src="../images/logo_mermaid2.svg" alt="An illustration of a mermaid"></a>
               <a href="#my-footer"><li >sources</li></a>
           </ul>
@@ -88,8 +88,8 @@
     // Add GeoJSON layers
     const geojsonLayers = [
       {
-        id: "Bubbler",
-        url: "https://services1.arcgis.com/DbPykcCwUUYq5zKg/arcgis/rest/services/Shapefiles/FeatureServer/0",
+        id: "Fountain",
+        url: "https://services1.arcgis.com/DbPykcCwUUYq5zKg/arcgis/rest/services/waterinstallations_Cleaning/FeatureServer/1",
         apiKey: apiKey,
         pointToLayer: function (feature, latlng) {
           return L.marker(latlng, {
@@ -98,7 +98,31 @@
               iconSize: [20, 20],
               iconAnchor: [15, 15]
             }),
-            title: "Bubbler"
+            title: "Fountain"
+          });
+        },
+        onEachFeature: function (feature, layer) {
+          if (feature.properties) {
+            let popupContent = "";
+            for (let prop in feature.properties) {
+              popupContent += `<b>${prop}:</b> ${feature.properties[prop]}<br>`;
+            }
+            layer.bindPopup(popupContent);
+          }
+        }
+      },
+      {
+        id: "Drinking Post",
+        url: "https://services1.arcgis.com/DbPykcCwUUYq5zKg/arcgis/rest/services/CPH_Drinking_Post/FeatureServer/15",
+        apiKey: apiKey,
+        pointToLayer: function (feature, latlng) {
+          return L.marker(latlng, {
+            icon: L.icon({
+              iconUrl: '../images/hydrant.svg',
+              iconSize: [20, 20],
+              iconAnchor: [15, 15]
+            }),
+            title: "Drinking Post"
           });
         },
         onEachFeature: function (feature, layer) {
@@ -113,7 +137,7 @@
       },
       {
         id: "Swimming Hall",
-        url: "https://services1.arcgis.com/DbPykcCwUUYq5zKg/arcgis/rest/services/Shapefiles/FeatureServer/1",
+        url: "https://services1.arcgis.com/DbPykcCwUUYq5zKg/arcgis/rest/services/Swimminghall_Cleaning/FeatureServer/2",
         apiKey: apiKey,
         pointToLayer: function (feature, latlng) {
           return L.marker(latlng, {
@@ -160,7 +184,7 @@
         }
       },
       {
-        id: "Yakin",
+        id: "Kayaking",
         url: "https://services1.arcgis.com/DbPykcCwUUYq5zKg/arcgis/rest/services/Copenhagen_Kayaking/FeatureServer/8",
         apiKey: apiKey,
         style: {
@@ -203,10 +227,11 @@
 
     // Define your layer names with HTML for the icons
     const overlayMapsWithIcons = {
-      "<img src='../images/fountain.svg' width='20px' height='20px'> Bubbler": overlayMaps["Bubbler"],
+      "<img src='../images/fountain.svg' width='20px' height='20px'> Fountain": overlayMaps["Fountain"],
+      "<img src='../images/hydrant.svg' width='20px' height='20px'> Drinking Post": overlayMaps["Drinking Post"],
       "<img src='../images/swim.svg' width='20px' height='20px'> Swimming Hall": overlayMaps["Swimming Hall"],
       "<img src='../images/bath.svg' width='20px' height='20px'> Badezone": overlayMaps["Badezone"],
-      "<img src='../images/pool.svg' width='15px' height='3px'> Yakin": overlayMaps["Yakin"]
+      "<img src='../images/pool.svg' width='15px' height='3px'> Kayaking": overlayMaps["Kayaking"]
     };
 
     // Add layer control

@@ -87,7 +87,7 @@ table {
         --col-back: #FFFDFA;
         --col-text: #292929;
 
-        --col-prim: #0057A3;
+        --col-prim: #00A6FB;
         --col-sec: #FFF1D6;
         --col-accent: #C8102E;
 
@@ -204,10 +204,49 @@ table {
         color: var(--col-back);
         margin: 10px 0;
     }
-    .my-hero-pic{
-        width: 100%;
+
+    .flip-container{
+        perspective: 1000px;
+        width: fit-content;
+        display: inline-block;
+    }
+
+    .flipping-item{
+        transition: transform 0.5s;
+        transform-style: preserve-3d;
+    }
+
+    .flip-container:hover .flipping-item{
+        transform: rotateY(180deg);
+    }
+
+    .fountain{
+        width: 70%;
         height: fit-content;
     }
+
+    .bath{
+        width: 50%;
+        height: fit-content;
+    }
+
+    .hydrant{
+        width: 30%;
+        height: fit-content;
+    }
+
+    .pool{
+        width:70%;
+    }
+
+    .swim{
+        width: 50%;
+    
+    }
+
+
+
+
 
 /* HEADER/ NAV-------------------------------------------------*/
 /* If you dont like colours we can change- this is just a temporary setup! */

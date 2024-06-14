@@ -248,7 +248,7 @@ table {
     }
 
     .fountain{
-        width: 200%;
+        width: 180%;
         height: fit-content;
         position: relative;
         top: 10px;
@@ -260,29 +260,29 @@ table {
         height: fit-content;
         position: relative;
         top: 140px;
-        left: 210px;
+        left: 100px;
     }
 
     .hydrant{
-        width: 50%;
+        width: 60%;
         height: fit-content;
         position: relative;
         top: 60px;
-        left: 180px;
+        left: 250px;
     }
 
     .pool{
         width:120%;
         position: relative;
         top: 0px;
-        left: -50px;
+        left: -100px;
     }
 
     .swim{
-        width: 80%;
+        width: 100%;
         position: relative;
-        top: 120px;
-        left: -200px;
+        top: 160px;
+        left: -130px;
 
     
     }

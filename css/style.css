@@ -140,6 +140,20 @@ table {
         cursor: url('waterdrop.svg'), auto;
     }
 
+    .beach-ball {
+        position: fixed;
+        top: 730px;
+        margin-left: 500px;
+        margin-right: 50px;
+        animation: bounce 3s infinite;
+        width: 40px;
+        height: auto;
+    }
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-600px); } 
+    }
+
     /* Hello! REM in font sizing means whatever the HTML is set to so 1rem= 14px and an em is based on the parent container
         https://www.digitalocean.com/community/tutorials/css-rem-vs-em-units */
 

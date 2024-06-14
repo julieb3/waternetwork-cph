@@ -88,7 +88,7 @@ table {
         --col-text: #292929;
 
         --col-prim: #00A6FB;
-        --col-sec: #FFF1D6;
+        --col-sec: #F4F0EA;
         --col-accent: #C8102E;
 
         --hov-opac: 60%;
@@ -137,6 +137,7 @@ table {
     body{
         margin: 0;
         padding: 0;
+        cursor: url('waterdrop.svg'), auto;
     }
 
     /* Hello! REM in font sizing means whatever the HTML is set to so 1rem= 14px and an em is based on the parent container
@@ -211,36 +212,64 @@ table {
         display: inline-block;
     }
 
-    .flipping-item{
+    .flipping-item-front, .flipping-item-back {
         transition: transform 0.5s;
         transform-style: preserve-3d;
     }
 
-    .flip-container:hover .flipping-item{
+    .flipping-container-front {
+        z-index: 2;
+        transform: rotateY(0deg);
+    }
+      
+      .flipping-container-back {
+        transform: rotateY(180deg);
+    }
+    .flip-container:hover .flipping-item-front {
         transform: rotateY(180deg);
     }
 
+    .flip-container:hover .flipping-item-back {
+        transform: rotateY(360deg);
+    }
+
     .fountain{
-        width: 70%;
+        width: 200%;
         height: fit-content;
+        position: relative;
+        top: 10px;
+        left: 10px;
     }
 
     .bath{
-        width: 50%;
+        width: 90%;
         height: fit-content;
+        position: relative;
+        top: 140px;
+        left: 210px;
     }
 
     .hydrant{
-        width: 30%;
+        width: 50%;
         height: fit-content;
+        position: relative;
+        top: 60px;
+        left: 180px;
     }
 
     .pool{
-        width:70%;
+        width:120%;
+        position: relative;
+        top: 0px;
+        left: -50px;
     }
 
     .swim{
-        width: 50%;
+        width: 80%;
+        position: relative;
+        top: 120px;
+        left: -200px;
+
     
     }
 

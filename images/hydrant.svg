@@ -1,1 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?><svg id="_лой_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.5 82.5"><defs><style>.cls-1{fill:none;}.cls-1,.cls-2{stroke:#fff1d6;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.5px;}.cls-2{fill:#00a6fb;}</style></defs><g id="_лой_1-2"><circle class="cls-2" cx="41.25" cy="41.25" r="40"/><g><rect class="cls-1" x="28.33" y="30.37" width="26.36" height="34"/><circle class="cls-1" cx="41.51" cy="44.67" r="7.24"/><circle class="cls-1" cx="41.51" cy="44.67" r="3.22"/><rect class="cls-1" x="20.58" y="64.54" width="41.53" height="3.47" rx=".97" ry=".97"/><rect class="cls-1" x="26.27" y="26.93" width="30.48" height="3.18" rx="1.42" ry="1.42"/><rect class="cls-1" x="34.32" y="11.78" width="14.38" height="3.18" rx="1.59" ry="1.59"/><rect class="cls-1" x="39.56" y="7.54" width="3.89" height="4.59" rx="1.95" ry="1.95" transform="translate(31.68 51.35) rotate(-90)"/><path class="cls-1" d="M34.71,14.91c-1.05,.61-2.97,1.93-4.46,4.32-2.03,3.26-1.99,6.49-1.92,7.69"/><path class="cls-1" d="M48.41,14.91c1.05,.61,2.97,1.93,4.46,4.32,2.03,3.26,1.99,6.49,1.92,7.69"/><rect class="cls-1" x="54.69" y="38.19" width="3.5" height="12.54" rx="1.75" ry="1.75"/><rect class="cls-1" x="58.62" y="40.86" width="3.5" height="7.2" rx="1.33" ry="1.33"/><rect class="cls-1" x="24.31" y="38.19" width="3.5" height="12.54" rx="1.75" ry="1.75" transform="translate(52.12 88.92) rotate(180)"/><rect class="cls-1" x="20.37" y="40.86" width="3.5" height="7.2" rx="1.33" ry="1.33" transform="translate(44.25 88.92) rotate(-180)"/></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="_лой_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 82.5 82.5" style="enable-background:new 0 0 82.5 82.5;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#00A6FB;stroke:#FFF1D6;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;}
+	.st1{fill:none;stroke:#FFF1D6;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;}
+</style>
+<circle class="st0" cx="41.2" cy="41.2" r="40"/>
+<path class="st1" d="M36.6,61.5c1.3-12.8,2.6-25.6,3.9-38.4c9.3,2.6,18.7,5.3,28,7.9c-5.1,11.9-10.1,23.7-15.2,35.6
+	C47.8,65,42.2,63.2,36.6,61.5z"/>
+<path class="st1" d="M39.5,33.1c1.9-0.9,4.9-2,8.3-1.4c4.8,0.8,6.4,4.2,10.4,4.6c2.2,0.2,5.7-0.4,10.4-5.3"/>
+<path class="st1" d="M21.3,18.2c0.2,4.7-0.3,8.4-0.8,11c-0.7,3.5-1.6,6-0.3,8.6c0.2,0.3,1.2,2.3,3.6,3.2c2.9,1,6.2-0.2,7.9-2.6
+	c0.2-0.3,1.4-2.1,1.2-4.4c-0.3-2.9-2.5-4.5-5.2-7.3C25.9,24.7,23.6,22,21.3,18.2z"/>
+</svg>

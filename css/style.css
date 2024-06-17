@@ -87,8 +87,8 @@ table {
         --col-back: #FFFDFA;
         --col-text: #292929;
 
-        --col-prim: #00A6FB;
-        --col-sec: #F4F0EA;
+        --col-prim: #0057A3;
+        --col-sec: #FFF1D6;
         --col-accent: #C8102E;
 
         --hov-opac: 60%;
@@ -97,6 +97,19 @@ table {
         --col-link: cyan; 
 
     }
+
+
+  /* CURSOR-------------------------------------------------*/
+    html,body{
+        cursor: url(../images/waterdrop.png) 10 10, pointer;
+        cursor: url(../images/waterdrop.png) 10 10, pointer;
+        cursor: -webkit-image-set(url(../images/waterdrop.png) 1x, url(../images/waterdrop@2x.png) 2x) 0 0, pointer;
+        }
+        a{
+            cursor: url(../images/click-waterdrop.png) 10 10, pointer;
+            cursor: url(../images/click-waterdrop.png) 10 10, pointer;
+            cursor: -webkit-image-set(url(../images/click-waterdrop.png) 1x, url(../images/click-waterdrop@2x.png) 2x) 0 0, pointer;
+        }
 
 /* ******   MOBILE   ********________________________________________________________________ */
 /* BASICS-------------------------------------------------*/
@@ -133,6 +146,7 @@ table {
         font-family: var(--body-font);
         font-size: 16px;
         background-color: #fff8ea;
+        scroll-behavior: smooth;
     }
     body{
         margin: 0;
@@ -152,6 +166,17 @@ table {
     @keyframes bounce {
         0%, 100% { transform: translateY(0); }
         50% { transform: translateY(-600px); } 
+    }
+
+    .beach-ball {
+        position: fixed;
+        top: 0;
+        left: 200px;
+        width: 40px;
+        height: auto;
+        z-index: 10;
+        /* transform: translateX(-50%); */
+        cursor: pointer; /* Change cursor to pointer to indicate it's interactive */
     }
 
     /* Hello! REM in font sizing means whatever the HTML is set to so 1rem= 14px and an em is based on the parent container
@@ -201,7 +226,6 @@ table {
     }
     h4{
         font-weight: 600;
-        opacity: 90%;
         font-family: var(--body-font);
         font-size: 1.2rem;
         
@@ -211,85 +235,18 @@ table {
         padding: 1rem 0;
     }
 
-    .cls-1{fill:var(--col-prim);stroke-width:0px;}
+    .cls-1{fill:var(--col-p-light);stroke-width:0px;}
     .blueback{
-        background-color: var(--col-prim);
+        background-color: var(--col-p-light);
     }
     .t-on-blue{
         color: var(--col-back);
         margin: 10px 0;
     }
-
-    .flip-container{
-        perspective: 1000px;
-        width: fit-content;
-        display: inline-block;
-    }
-
-    .flipping-item-front, .flipping-item-back {
-        transition: transform 0.5s;
-        transform-style: preserve-3d;
-    }
-
-    .flipping-container-front {
-        z-index: 2;
-        transform: rotateY(0deg);
-    }
-      
-      .flipping-container-back {
-        transform: rotateY(180deg);
-    }
-    .flip-container:hover .flipping-item-front {
-        transform: rotateY(180deg);
-    }
-
-    .flip-container:hover .flipping-item-back {
-        transform: rotateY(360deg);
-    }
-
-    .fountain{
-        width: 180%;
-        height: fit-content;
-        position: relative;
-        top: 10px;
-        left: 10px;
-    }
-
-    .bath{
-        width: 90%;
-        height: fit-content;
-        position: relative;
-        top: 140px;
-        left: 100px;
-    }
-
-    .hydrant{
-        width: 60%;
-        height: fit-content;
-        position: relative;
-        top: 60px;
-        left: 250px;
-    }
-
-    .pool{
-        width:120%;
-        position: relative;
-        top: 0px;
-        left: -100px;
-    }
-
-    .swim{
+    .my-hero-pic{
         width: 100%;
-        position: relative;
-        top: 160px;
-        left: -130px;
-
-    
+        height: fit-content;
     }
-
-
-
-
 
 /* HEADER/ NAV-------------------------------------------------*/
 /* If you dont like colours we can change- this is just a temporary setup! */
@@ -311,6 +268,7 @@ table {
         margin-left: auto;
         margin-right: auto;
         padding: .5rem;
+        z-index: 4;
     }
     nav a img{
         padding: .2rem;
@@ -477,16 +435,3 @@ p{
 
 
 }
-
-
-
-
-/* THE GRAVEYARD 
-
-
-.homebutton{
-    text-align: center;
-} 
-
-
-*/
